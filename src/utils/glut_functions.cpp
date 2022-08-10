@@ -8,8 +8,8 @@ bool leftMouseButtonDown = false;
 bool rightMouseButtonDown = false;
 int mouseXPos = 0;
 int mouseYPos = 0;
-double cameraY = 0;
-double cameraAngle = 0;
+double cameraY = 10;
+double cameraAngle = 30;
 double cameraZoom = 10;
 
 float mariposa_x=0;
