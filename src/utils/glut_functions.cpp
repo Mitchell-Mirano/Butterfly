@@ -25,11 +25,11 @@ static void key(unsigned char key, int x, int y)
         exit(EXIT_SUCCESS); // Terminar la aplicación
         break;
     }
-    case 'w':mariposa_x+=0.1; break;
-    case 's':mariposa_x-=0.1; break;
+    case 'a':mariposa_x+=0.2; break;
+    case 'd':mariposa_x-=0.2; break;
 
-    case 'a':mariposa_y+=0.1; break;
-    case 'd':mariposa_y-=0.1; break;
+    case 'w':mariposa_y+=0.2; break;
+    case 's':mariposa_y-=0.2; break;
     }
     glutPostRedisplay();
 }

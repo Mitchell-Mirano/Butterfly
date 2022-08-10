@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-    glutInitWindowSize(1000, 1080);
+    glutInitWindowSize(1920, 1080);
     srand(time(NULL));
     for (int i = 0; i < 10; i++)
     {
