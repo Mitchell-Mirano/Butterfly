@@ -117,11 +117,14 @@ void display(void)
             glPopMatrix();
         }
     }
+
 glPushMatrix();
 glScaled(0.1,0.1,0.1);
-glTranslated(0,3,0);
+glTranslated(mariposa_x,3,mariposa_y);
 Mariposa();
 glPopMatrix();
+
+
     glutSwapBuffers();
 }
 

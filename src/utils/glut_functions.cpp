@@ -12,6 +12,9 @@ double cameraY = 0;
 double cameraAngle = 0;
 double cameraZoom = 10;
 
+float mariposa_x=0;
+float mariposa_y=0;
+
 static void key(unsigned char key, int x, int y)
 {
     switch (key)
@@ -22,6 +25,11 @@ static void key(unsigned char key, int x, int y)
         exit(EXIT_SUCCESS); // Terminar la aplicación
         break;
     }
+    case 'w':mariposa_x+=0.1; break;
+    case 's':mariposa_x-=0.1; break;
+
+    case 'a':mariposa_y+=0.1; break;
+    case 'd':mariposa_y-=0.1; break;
     }
     glutPostRedisplay();
 }
