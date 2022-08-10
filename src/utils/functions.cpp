@@ -192,3 +192,12 @@ void LineasRdiagonales(float x,float y,float r1, float r2, float k, float* color
         glEnd();
     }
 }
+
+void esfera(float r, float *color){
+    glColor3fv(color);
+    GLUquadricObj *quadric;
+    quadric = gluNewQuadric();
+    gluQuadricDrawStyle(quadric, GLU_SMOOTH);
+    //gluQuadricNormals(quadric, GLU_SMOOTH);
+    gluSphere(quadric,r,100,100);
+}

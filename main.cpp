@@ -11,9 +11,9 @@
 #include "./src/utils/random.cpp"
 #include "./src/rosas/mariposa.cpp"
 
-float separation = 3;
-float x_init = -5;
-float y_init = -5;
+float separation = 1;
+float x_init = -4.5;
+float y_init = -4.5;
 
 int rosas[5][5] = {};
 
@@ -76,7 +76,7 @@ void Ejes(int c)
 
 void display(void)
 {
-    glClearColor(0, 0, 0, 0);
+    glClearColor(0, 0.5, 1, 0);
     glClear(GL_COLOR_BUFFER_BIT);
 
     glLoadIdentity();
@@ -85,13 +85,27 @@ void display(void)
     gluLookAt(cameraX, cameraY, cameraZ, 0.0, 0.0, 0.0, 0.0, 50.0, 0.0);
     Ejes(0);
 
-    for (int i = 0; i < 5; i++)
+    glColor3f(0.52, 0.41, 0.36);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    glBegin(GL_POLYGON);
+    glVertex3f(-10, 0, 10);
+    glVertex3f(-10, 0, -10);
+    glVertex3f(10, 0, -10);
+    glVertex3f(10, 0, 10);
+    glEnd();
+
+    glPushMatrix();
+    glTranslated(-2, 5.5, 2);
+    esfera(0.5, sol);
+    glPopMatrix();
+
+    for (int i = 0; i < 10; i++)
     {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 10; j++)
         {
             glPushMatrix();
-            glTranslated(x_init + separation * i, 0, y_init + separation * j);
-            glScaled(0.1, 0.1, 0.1);
+            glTranslated(x_init + separation * i, 1, y_init + separation * j);
+            glScaled(0.05, 0.05, 0.05);
             if (rosas[i][j] == 1)
             {
                 Rosa1();
@@ -117,9 +131,9 @@ int main(int argc, char *argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(1000, 1080);
     srand(time(NULL));
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 10; i++)
     {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 10; j++)
         {
             rosas[i][j] = randomRose();
         }
