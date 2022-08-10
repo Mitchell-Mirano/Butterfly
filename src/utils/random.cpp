@@ -3,8 +3,6 @@
 
 
 int randomRose(){
-    
-    srand(time(NULL));
 
     int num=rand()%100;
     if(num>50){
