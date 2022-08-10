@@ -120,6 +120,7 @@ void display(void)
 
 glPushMatrix();
 glScaled(0.1,0.1,0.1);
+glRotated(60,1,0,0);
 glTranslated(mariposa_x,3,mariposa_y);
 Mariposa();
 glPopMatrix();
