@@ -12,8 +12,8 @@
 #include "./src/rosas/mariposa.cpp"
 
 float separation = 1;
-float x_init = -4.5;
-float y_init = -4.5;
+float x_init = -2.5;
+float y_init = -2.5;
 
 int rosas[5][5] = {};
 
@@ -99,9 +99,9 @@ void display(void)
     esfera(0.5, sol);
     glPopMatrix();
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 6; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 6; j++)
         {
             glPushMatrix();
             glTranslated(x_init + separation * i, 1, y_init + separation * j);
@@ -135,9 +135,9 @@ int main(int argc, char *argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(1000, 1080);
     srand(time(NULL));
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 6; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 6; j++)
         {
             rosas[i][j] = randomRose();
         }
