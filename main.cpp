@@ -9,6 +9,7 @@
 #include "./src/rosas/rosas.cpp"
 #include "./src/utils/glut_functions.cpp"
 #include "./src/utils/random.cpp"
+#include "./src/rosas/mariposa.cpp"
 
 float separation = 3;
 float x_init = -5;
@@ -102,7 +103,11 @@ void display(void)
             glPopMatrix();
         }
     }
-
+glPushMatrix();
+glScaled(0.1,0.1,0.1);
+glTranslated(0,3,0);
+Mariposa();
+glPopMatrix();
     glutSwapBuffers();
 }
 
