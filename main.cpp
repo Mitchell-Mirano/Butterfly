@@ -74,6 +74,8 @@ void Ejes(int c)
     }
 }
 
+
+
 void display(void)
 {
     glClearColor(0, 0.5, 1, 0);
@@ -129,9 +131,34 @@ glPopMatrix();
     glutSwapBuffers();
 }
 
+void Mensaje(){
+
+printf(" =================================================================\n");
+printf(" == Campo de flores ==\n");
+printf(" =================================================================\n\n ");
+
+printf(" GRUPO 2 : \n");
+printf(" \t Balboa Merly, Mirano Mitchell, Vasquez Sebastian\n");
+
+printf("\t FUNCIONALIDADES DE LAS TECLAS Y MOUSE\n\n");
+
+printf("[mouse]\t Movimiento de escena\n");
+printf("[Rueda del mouse]\t Acercar o alejar la escena \n");
+printf(" [w]\t Mover la mariposa hacia arriba \n");
+printf(" [a]\t Mover la mariposa hacia la izquierda \n");
+printf(" [s]\t Mover la mariposa hacia abajo \n");
+printf(" [d]\t Mover la mariposa hacia la derecha \n");
+
+printf("\n\n");
+
+}
+
+
+
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
+    Mensaje();
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(1920, 1080);
     srand(time(NULL));
@@ -144,7 +171,7 @@ int main(int argc, char *argv[])
     };
 
     glutInitWindowPosition(0, 0);
-    glutCreateWindow("Poliedros en 3d");
+    glutCreateWindow("Campo de Flores");
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutKeyboardFunc(key); // control del teclado
